@@ -1,6 +1,6 @@
-FROM centos:7
+#FROM centos:7
 #FROM mysql-56-centos7
-#FROM centos/mysql-56-centos7
+FROM centos/mysql-56-centos7
 
 # Install packages necessary to run EAP
 RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
