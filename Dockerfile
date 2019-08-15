@@ -2,6 +2,10 @@
 #FROM mysql-56-centos7
 FROM centos/mysql-56-centos7
 
+
+# User root user to install software
+USER root
+
 # Install packages necessary to run EAP
 RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
 
@@ -15,8 +19,6 @@ RUN groupadd -r jboss -g 1000 && useradd -u 1000 -r -g jboss -m -d /opt/jboss -s
 # Set the working directory to jboss' user home directory
 WORKDIR /opt/jboss
 
-# User root user to install software
-USER root
 
 # Install necessary packages
 #RUN yum -y install java-1.7.0-openjdk-devel && yum clean all
