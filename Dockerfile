@@ -1,6 +1,4 @@
 FROM centos:7
-#FROM mysql-56-centos7
-#FROM centos/mysql-56-centos7
 
 # Install packages necessary to run EAP
 RUN yum update -y && yum -y install xmlstarlet saxon augeas bsdtar unzip && yum clean all
@@ -19,8 +17,6 @@ WORKDIR /opt/jboss
 USER root
 
 # Install necessary packages
-#RUN yum -y install java-1.7.0-openjdk-devel && yum clean all
-# pending test zzz 
 RUN yum -y install java-1.8.0-openjdk-devel && yum clean all
 
 # Install jboss-4.0.1sp1
